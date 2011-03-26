@@ -1,7 +1,7 @@
 #pragma once
 /* functions */
 
-/* ìùåväw */
+/* Áµ±Ë®àÂ≠¶ */
 double Summation(const double *a, size_t n);
 double SumOfSquares(const double *a, size_t n);
 double SumOfProduct(const double *a1, const double *a2, size_t n);
@@ -19,7 +19,7 @@ int Factorial(int n);
 int Permutation(int n, int r);
 int Combination(int n, int r);
 
-/* ê}å`Ç∆ï˚íˆéÆ */
+/* Âõ≥ÂΩ¢„Å®ÊñπÁ®ãÂºè */
 double Distance(const double *p1, const double *p2, size_t n);
 int DivideInternally2D(const double p1[2], const double p2[2], int m, int n, double result[2]);
 int DivideExternally2D(const double p1[2], const double p2[2], int m, int n, double result[2]);
@@ -29,7 +29,7 @@ double DistancePlaneToDepth(double a, double b, double c, double d, double point
 double Arg(double y, double x);
 double ZenithAngle(double x, double y, double z);
 
-/* ê¸å`ë„êî */
+/* Á∑öÂΩ¢‰ª£Êï∞ */
 double *ToVector(const double *p1, const double *p2, size_t n, double *vec);
 double *VectorSum(const double *vec1, const double *vec2, double *sumVec, size_t n);
 double *VectorDifference(const double *vec1, const double *vec2, double *sumVec, size_t n);
@@ -49,10 +49,10 @@ int ToPlaneCanonicalForm(double a, double b, double c, double *ga, double *gb, d
 int ToPlaneGenericForm(double a, double b, double c, double d, double *ca, double *cb, double *cc);
 int IsCorrectPlane(const double *vec1, const double *vec2, size_t n);
 
-/* ä÷êî */
+/* Èñ¢Êï∞ */
 double Sigmoid(double x, double gain);
 
-/* ÇªÇÃëº */
+/* „Åù„ÅÆ‰ªñ */
 double pi(void);
 double to_deg(double);
 double to_rad(double a);
