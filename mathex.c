@@ -1,4 +1,4 @@
-/** 
+/**
  * @file    mathex.c
  * @brief   math.hの拡張
  *
@@ -20,12 +20,12 @@
  * @return 総和
  */
 double Summation(const double *a, size_t n) {
-	double sum = 0.0;
+    double sum = 0.0;
 
-	while (n--) 
-		sum += a[n];
+    while (n--) 
+        sum += a[n];
 
-	return sum;
+    return sum;
 }
 
 /**
@@ -35,12 +35,12 @@ double Summation(const double *a, size_t n) {
  * @return 平方和
  */
 double SumOfSquares(const double *a, size_t n) {
-	double sum = 0.0;
+    double sum = 0.0;
 
-	while (n--)
-		sum += (a[n] * a[n]);
+    while (n--)
+        sum += (a[n] * a[n]);
 
-	return sum;
+    return sum;
 }
 
 /**
@@ -51,12 +51,12 @@ double SumOfSquares(const double *a, size_t n) {
  * @return 積和
  */
 double SumOfProduct(const double *a1, const double *a2, size_t n) {
-	double sum = 0.0;
+    double sum = 0.0;
 
-	while (n--)
-		sum += (a1[n] * a2[n]);
+    while (n--)
+        sum += (a1[n] * a2[n]);
 
-	return sum;
+    return sum;
 }
 
 /**
@@ -66,15 +66,15 @@ double SumOfProduct(const double *a1, const double *a2, size_t n) {
  * @return 平均値
  */
 double Average(const double *a, size_t n) {
-	size_t i;
-	double sum = 0.0;
+    size_t i;
+    double sum = 0.0;
 
-	if ( n < 1 ) return 0.0;
+    if ( n < 1 ) return 0.0;
 
-	for (i = 0; i < n; i++) {
-		sum += a[i];
-	}
-	return sum / (double)n;
+    for (i = 0; i < n; i++) {
+        sum += a[i];
+    }
+    return sum / (double)n;
 }
 
 /**
@@ -84,20 +84,20 @@ double Average(const double *a, size_t n) {
  * @return 分散
  */
 double Variance(const double *a, size_t n) {
-	size_t i;
-	double sum = 0.0;
-	double sqsum = 0.0;
-	double avg;
+    size_t i;
+    double sum = 0.0;
+    double sqsum = 0.0;
+    double avg;
 
-	if ( n < 1 ) return 0.0;
+    if ( n < 1 ) return 0.0;
 
-	for (i = 0; i < n; i++) {
-		sum += a[i]; /* 和 */
-		sqsum += a[i] * a[i]; /* 平方和 */
-	}
+    for (i = 0; i < n; i++) {
+        sum += a[i]; /* 和 */
+        sqsum += a[i] * a[i]; /* 平方和 */
+    }
 
-	avg = sum / (double)n; /* 平均 */
-	return sqsum / (double)n - avg * avg; /* 分散 */
+    avg = sum / (double)n; /* 平均 */
+    return sqsum / (double)n - avg * avg; /* 分散 */
 }
 
 /**
@@ -156,23 +156,23 @@ double Covariance(const double *x, const double *y, int n) {
  * @return 標準偏差
  */
 double StdDev(const double *a, size_t n) {
-	size_t i;
-	double sum = 0.0;
-	double sqsum = 0.0;
-	double avg, var;
+    size_t i;
+    double sum = 0.0;
+    double sqsum = 0.0;
+    double avg, var;
 
-	if ( n < 1 ) return 0.0;
+    if ( n < 1 ) return 0.0;
 
-	for (i = 0; i < n; i++) {
-		sum += a[i]; /* 和 */
-		sqsum += a[i] * a[i]; /* 平方和 */
-	}
+    for (i = 0; i < n; i++) {
+        sum += a[i]; /* 和 */
+        sqsum += a[i] * a[i]; /* 平方和 */
+    }
 
-	avg = sum / (double)n; /* 平均 */
-	var = sqsum / (double)n - avg * avg; /* 分散 */
+    avg = sum / (double)n; /* 平均 */
+    var = sqsum / (double)n - avg * avg; /* 分散 */
 
-	if ( var < 0.0 ) var = 0.0;
-	return sqrt(var); /* 標準偏差 */
+    if ( var < 0.0 ) var = 0.0;
+    return sqrt(var); /* 標準偏差 */
 
 }
 
@@ -183,17 +183,17 @@ double StdDev(const double *a, size_t n) {
  * @return 最大値
  */
 double Max(const double *a, size_t n) {
-	size_t i;
-	double max;
+    size_t i;
+    double max;
 
-	if ( n < 1 ) return 0.0;
+    if ( n < 1 ) return 0.0;
 
-	max = a[0];
-	for (i = 1; i < n; i++) {
-		if ( max < a[i] ) max = a[i];
-	}
+    max = a[0];
+    for (i = 1; i < n; i++) {
+        if ( max < a[i] ) max = a[i];
+    }
 
-	return max;
+    return max;
 }
 
 /**
@@ -203,17 +203,17 @@ double Max(const double *a, size_t n) {
  * @return 最大値
  */
 int MaxInt(const int *a, size_t n) {
-	size_t i;
-	int max;
+    size_t i;
+    int max;
 
-	if ( n < 1 ) return 0;
+    if ( n < 1 ) return 0;
 
-	max = a[0];
-	for (i = 1; i < n; i++) {
-		if ( max < a[i] ) max = a[i];
-	}
+    max = a[0];
+    for (i = 1; i < n; i++) {
+        if ( max < a[i] ) max = a[i];
+    }
 
-	return max;
+    return max;
 }
 
 
@@ -224,17 +224,17 @@ int MaxInt(const int *a, size_t n) {
  * @return 最小値
  */
 double Min(const double *a, size_t n) {
-	size_t i;
-	double min;
+    size_t i;
+    double min;
 
-	if ( n < 1 ) return 0.0;
+    if ( n < 1 ) return 0.0;
 
-	min = a[0];
-	for (i = 1; i < n; i++) {
-		if ( min > a[i] ) min = a[i];
-	}
+    min = a[0];
+    for (i = 1; i < n; i++) {
+        if ( min > a[i] ) min = a[i];
+    }
 
-	return min;
+    return min;
 }
 
 /**
@@ -244,17 +244,17 @@ double Min(const double *a, size_t n) {
  * @return 最小値
  */
 int MinInt(const int *a, size_t n) {
-	size_t i;
-	int min;
+    size_t i;
+    int min;
 
-	if ( n < 1 ) return 0;
+    if ( n < 1 ) return 0;
 
-	min = a[0];
-	for (i = 1; i < n; i++) {
-		if ( min > a[i] ) min = a[i];
-	}
+    min = a[0];
+    for (i = 1; i < n; i++) {
+        if ( min > a[i] ) min = a[i];
+    }
 
-	return min;
+    return min;
 }
 
 /**
@@ -267,18 +267,18 @@ int MinInt(const int *a, size_t n) {
  * @retval 0 配列の要素が0
  */
 int MaxMin(const double *a, size_t n, double *max, double *min) {
-	size_t i;
+    size_t i;
 
-	if ( n < 1 ) return 0;
+    if ( n < 1 ) return 0;
 
-	*max = a[0];
-	*min = a[0];
-	for (i = 1; i < n; i++) {
-		if ( *max < a[i] ) *max = a[i];
-		if ( *min > a[i] ) *min = a[i];
-	}
+    *max = a[0];
+    *min = a[0];
+    for (i = 1; i < n; i++) {
+        if ( *max < a[i] ) *max = a[i];
+        if ( *min > a[i] ) *min = a[i];
+    }
 
-	return 1;
+    return 1;
 }
 
 
@@ -288,14 +288,14 @@ int MaxMin(const double *a, size_t n, double *max, double *min) {
  * @return 階乗
  */
 int Factorial(int n) {
-	int fact = n;
+    int fact = n;
 
-	if (n <= 0) return 1;
+    if (n <= 0) return 1;
 
-	while (--n) 
-		fact *= n;
+    while (--n) 
+        fact *= n;
 
-	return fact;
+    return fact;
 }
 
 /**
@@ -305,9 +305,9 @@ int Factorial(int n) {
  * @return 順列組み合わせの総数
  */
 int Permutation(int n, int r) {
-	if (r <= 0) return 1;
-	/* 0除算はありえない */
-	return Factorial(n) / Factorial(n - r);
+    if (r <= 0) return 1;
+    /* 0除算はありえない */
+    return Factorial(n) / Factorial(n - r);
 }
 
 /**
@@ -317,9 +317,9 @@ int Permutation(int n, int r) {
  * @return 組み合わせの総数
  */
 int Combination(int n, int r) {
-	if (r <= 0) return 1;
-	/* 0除算はありえない */
-	return Factorial(n) / (Factorial(r) * Factorial(n - r));
+    if (r <= 0) return 1;
+    /* 0除算はありえない */
+    return Factorial(n) / (Factorial(r) * Factorial(n - r));
 }
 
 
@@ -331,13 +331,13 @@ int Combination(int n, int r) {
  * @return p1とp2間の距離
  */
 double Distance(const double *p1, const double *p2, size_t n) {
-	size_t i;
-	double distance = 0.0;
+    size_t i;
+    double distance = 0.0;
 
-	for (i = 0; i < n; i++) {
-		distance += (p2[i] - p1[i]) * (p2[i] - p1[i]);
-	}
-	return sqrt(distance);
+    for (i = 0; i < n; i++) {
+        distance += (p2[i] - p1[i]) * (p2[i] - p1[i]);
+    }
+    return sqrt(distance);
 }
 
 /**
@@ -351,12 +351,12 @@ double Distance(const double *p1, const double *p2, size_t n) {
  * @retval 0 異常終了
  */
 int DivideInternally2D(const double p1[2], const double p2[2], int m, int n, double result[2]) {
-	if (m < 1 && n < 1) return 0;
-	
-	result[0] = (n * p1[0] + m * p2[0]) / (m + n);
-	result[1] = (n * p1[1] + m * p2[1]) / (m + n);
+    if (m < 1 && n < 1) return 0;
+    
+    result[0] = (n * p1[0] + m * p2[0]) / (m + n);
+    result[1] = (n * p1[1] + m * p2[1]) / (m + n);
 
-	return 1;
+    return 1;
 }
 
 /**
@@ -370,12 +370,12 @@ int DivideInternally2D(const double p1[2], const double p2[2], int m, int n, dou
  * @retval 0 異常終了
  */
 int DivideExternally2D(const double p1[2], const double p2[2], int m, int n, double result[2]) {
-	if (m - n == 0) return 0;
+    if (m - n == 0) return 0;
 
-	result[0] = (-n * p1[0] + m * p2[0]) / (m - n);
-	result[1] = (-n * p1[1] + m * p2[1]) / (m - n);
+    result[0] = (-n * p1[0] + m * p2[0]) / (m - n);
+    result[1] = (-n * p1[1] + m * p2[1]) / (m - n);
 
-	return 1;
+    return 1;
 }
 
 /**
@@ -387,9 +387,9 @@ int DivideExternally2D(const double p1[2], const double p2[2], int m, int n, dou
  * @return resultの先頭アドレス
  */
 double *Triangle_CenterOfGravity(const double p1[2], const double p2[2], const double p3[2], double result[2]) {
-	result[0] = (p1[0] + p2[0] + p3[0]) / 3.0;
-	result[1] = (p1[1] + p2[1] + p3[1]) / 3.0;
-	return result;
+    result[0] = (p1[0] + p2[0] + p3[0]) / 3.0;
+    result[1] = (p1[1] + p2[1] + p3[1]) / 3.0;
+    return result;
 }
 
 /**
@@ -401,12 +401,12 @@ double *Triangle_CenterOfGravity(const double p1[2], const double p2[2], const d
  * @return vec の先頭アドレス
  */
 double *ToVector(const double *p1, const double *p2, size_t n, double *vec) {
-	size_t i;
-	
-	for ( i = 0; i < n; i++ ) {
-		vec[i] = p2[i] - p1[i];
-	}
-	return vec;
+    size_t i;
+    
+    for ( i = 0; i < n; i++ ) {
+        vec[i] = p2[i] - p1[i];
+    }
+    return vec;
 }
 
 /**
@@ -418,9 +418,9 @@ double *ToVector(const double *p1, const double *p2, size_t n, double *vec) {
  * @return sumVecの先頭アドレス
  */
 double *VectorSum(const double *vec1, const double *vec2, double *sumVec, size_t n) {
-	while (n--) 
-		sumVec[n] = vec1[n] + vec2[n];
-	return sumVec;
+    while (n--) 
+        sumVec[n] = vec1[n] + vec2[n];
+    return sumVec;
 }
 
 /**
@@ -432,9 +432,9 @@ double *VectorSum(const double *vec1, const double *vec2, double *sumVec, size_t
  * @return diffVecの先頭アドレス
  */
 double *VectorDifference(const double *vec1, const double *vec2, double *diffVec, size_t n) {
-	while (n--) 
-		diffVec[n] = vec1[n] - vec2[n];
-	return diffVec;
+    while (n--) 
+        diffVec[n] = vec1[n] - vec2[n];
+    return diffVec;
 }
 
 /**
@@ -473,7 +473,7 @@ double InnerProduct(const double *vec1, const double *vec2, size_t n) {
 }
 
 /**
- * 2 つのベクトルのなす角を計算する
+ * 2つのベクトルのなす角を計算する
  * @param[in] vec1 ベクトル1
  * @param[in] vec2 ベクトル2
  * @param[in] n ベクトルの次元数
@@ -493,24 +493,24 @@ double IncludedAngle(const double *vec1, const double *vec2, size_t n) {
  * @retval 0 ベクトルがゼロベクトル
  */
 int UnitVector(const double *vec, double *unitVec, size_t n) {
-	size_t i;
-	double norm = Norm(vec, n);
+    size_t i;
+    double norm = Norm(vec, n);
 
-	/* ベクトルのノルムが0でないか? */
-	if (norm > 0.0) { 
-		/* 単位ベクトルを取得 */
-		for (i = 0; i < n; i++) {
-			unitVec[i] = vec[i] / Norm(vec, n);
-		}
-		return 1;
+    /* ベクトルのノルムが0でないか? */
+    if (norm > 0.0) { 
+        /* 単位ベクトルを取得 */
+        for (i = 0; i < n; i++) {
+            unitVec[i] = vec[i] / Norm(vec, n);
+        }
+        return 1;
 
-	} else {
-		/* 結果にすべて0を格納する */
-		for (i = 0; i < n; i++) {
-			unitVec[i] = 0;
-		}
-		return 0;
-	}
+    } else {
+        /* 結果にすべて0を格納する */
+        for (i = 0; i < n; i++) {
+            unitVec[i] = 0;
+        }
+        return 0;
+    }
 }
 
 /**
@@ -522,15 +522,15 @@ int UnitVector(const double *vec, double *unitVec, size_t n) {
  * @return resultの先頭アドレス
  */
 double *NormalVector3D(const double *p1, const double *p2, const double *p3, double *result) {
-	double vec1[3];
-	double vec2[3];
+    double vec1[3];
+    double vec2[3];
 
-	ToVector(p2, p1, 3, vec1);
-	ToVector(p2, p3, 3, vec2);
+    ToVector(p2, p1, 3, vec1);
+    ToVector(p2, p3, 3, vec2);
 
-	CrossProduct3D(vec1, vec2, result);
+    CrossProduct3D(vec1, vec2, result);
 
-	return result;
+    return result;
 }
 
 /**
@@ -541,15 +541,15 @@ double *NormalVector3D(const double *p1, const double *p2, const double *p3, dou
  * @return resultの先頭アドレス
  */
 double *CrossProduct3D(const double *vec1, const double *vec2, double *result) {
-	result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];
-	result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];
-	result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];
+    result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];
+    result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];
+    result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];
 
-	return result;
+    return result;
 }
 
 /**
- * 2 つのベクトルの類似度を計算する
+ * 2つのベクトルの類似度を計算する
  * @param[in] vec1 ベクトル1
  * @param[in] vec2 ベクトル2
  * @param[in] n ベクトルの次元数
@@ -558,7 +558,7 @@ double *CrossProduct3D(const double *vec1, const double *vec2, double *result) {
  */
 double VectorSimilarity(const double *vec1, const double *vec2, size_t n) {
     return InnerProduct(vec1, vec2, n) / 
-		((Norm(vec1, n) * Norm(vec2, n)) + DBL_MIN);
+        ((Norm(vec1, n) * Norm(vec2, n)) + DBL_MIN);
 }
 
 /**
@@ -569,16 +569,16 @@ double VectorSimilarity(const double *vec1, const double *vec2, size_t n) {
  * @return vec1 と vec2 の正規化距離
  */
 double NormalizedVectorDistance(const double *vec1, const double *vec2, size_t n) {
-	size_t i;
-	double unitDiff;
-	double sum = 0.0;
+    size_t i;
+    double unitDiff;
+    double sum = 0.0;
 
-	for (i = 0; i < n; i++) {
-		unitDiff = (vec1[i] / (Norm(vec1, n) + DBL_MIN)) - (vec2[i] / (Norm(vec2, n) + DBL_MIN));
-		sum += unitDiff * unitDiff;
-	}
+    for (i = 0; i < n; i++) {
+        unitDiff = (vec1[i] / (Norm(vec1, n) + DBL_MIN)) - (vec2[i] / (Norm(vec2, n) + DBL_MIN));
+        sum += unitDiff * unitDiff;
+    }
 
-	return sqrt(sum);
+    return sqrt(sum);
 }
 
 /**
@@ -590,19 +590,19 @@ double NormalizedVectorDistance(const double *vec1, const double *vec2, size_t n
  * @rarval 0 p1とp2を結ぶ直線上にpが存在しない
  */
 int IsDepthOnLine3D(const double *p1, const double *p2, const double *p) {
-	double x = p[0];
-	double y = p[1];
-	double z = p[2];
+    double x = p[0];
+    double y = p[1];
+    double z = p[2];
 
-	double v1 = (x - p1[0]) / (p2[0] - p1[0] + (1.0e-8));
-	double v2 = (y - p1[1]) / (p2[1] - p1[1] + (1.0e-8));
-	double v3 = (z - p1[2]) / (p2[2] - p1[2] + (1.0e-8));
+    double v1 = (x - p1[0]) / (p2[0] - p1[0] + (1.0e-8));
+    double v2 = (y - p1[1]) / (p2[1] - p1[1] + (1.0e-8));
+    double v3 = (z - p1[2]) / (p2[2] - p1[2] + (1.0e-8));
 
-	if ( (fabs(v1 - v2) <= 1.0e-8) && (fabs(v1 - v3) <= 1.0e-8)) {
-		return 1;
-	} else {
-		return 0;
-	}
+    if ( (fabs(v1 - v2) <= 1.0e-8) && (fabs(v1 - v3) <= 1.0e-8)) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 /**
@@ -616,20 +616,20 @@ int IsDepthOnLine3D(const double *p1, const double *p2, const double *p) {
  * @param[out] d 平面の方程式 ax + by + cz + d = 0 の係数の d
  */
 void CalculatePlane3D(const double *AB, const double *AC, const double *A, double *a, double *b, double *c, double *d) {
-	double norm;
+    double norm;
 
-	/* 法線ベクトル */
-	*a = AB[1] * AC[2] - AB[2] * AC[1];
-	*b = AB[2] * AC[0] - AB[0] * AC[2];
-	*c = AB[0] * AC[1] - AB[1] * AC[0];
+    /* 法線ベクトル */
+    *a = AB[1] * AC[2] - AB[2] * AC[1];
+    *b = AB[2] * AC[0] - AB[0] * AC[2];
+    *c = AB[0] * AC[1] - AB[1] * AC[0];
 
-	norm = sqrt(*a * *a + *b * *b + *c * *c);
-	*a = *a / (norm + DBL_MIN);
-	*b = *b / (norm + DBL_MIN);
-	*c = *c / (norm + DBL_MIN);
+    norm = sqrt(*a * *a + *b * *b + *c * *c);
+    *a = *a / (norm + DBL_MIN);
+    *b = *b / (norm + DBL_MIN);
+    *c = *c / (norm + DBL_MIN);
 
-	/* 原点から平面に伸ばした垂線の長さ */
-	*d = -1.0 * *a * A[0] + -1.0 * *b * A[1] + -1.0 * *c * A[2];
+    /* 原点から平面に伸ばした垂線の長さ */
+    *d = -1.0 * *a * A[0] + -1.0 * *b * A[1] + -1.0 * *c * A[2];
 }
 
 /**
@@ -643,25 +643,25 @@ void CalculatePlane3D(const double *AB, const double *AC, const double *A, doubl
  * @param[out] d 平面の方程式 ax + by + cz + d = 0 の係数の d
  */
 void CalculatePlane3D_Using3Depths(double P1[3], double P2[3], double P3[3], double *a, double *b, double *c, double *d) {
-	double AB[3], AC[3];
-	double norm;
+    double AB[3], AC[3];
+    double norm;
 
-	/* ベクトルに変換 */
-	ToVector(P1, P2, 3, AB);
-	ToVector(P1, P3, 3, AC);
+    /* ベクトルに変換 */
+    ToVector(P1, P2, 3, AB);
+    ToVector(P1, P3, 3, AC);
 
-	/* 法線ベクトル */
-	*a = AB[1] * AC[2] - AB[2] * AC[1];
-	*b = AB[2] * AC[0] - AB[0] * AC[2];
-	*c = AB[0] * AC[1] - AB[1] * AC[0];
+    /* 法線ベクトル */
+    *a = AB[1] * AC[2] - AB[2] * AC[1];
+    *b = AB[2] * AC[0] - AB[0] * AC[2];
+    *c = AB[0] * AC[1] - AB[1] * AC[0];
 
-	norm = sqrt(*a * *a + *b * *b + *c * *c);
-	*a = *a / (norm + DBL_MIN);
-	*b = *b / (norm + DBL_MIN);
-	*c = *c / (norm + DBL_MIN);
+    norm = sqrt(*a * *a + *b * *b + *c * *c);
+    *a = *a / (norm + DBL_MIN);
+    *b = *b / (norm + DBL_MIN);
+    *c = *c / (norm + DBL_MIN);
 
-	/* 原点から平面に伸ばした垂線の長さ */
-	*d = -1.0 * *a * P1[0] + -1.0 * *b * P1[1] + -1.0 * *c * P1[2];
+    /* 原点から平面に伸ばした垂線の長さ */
+    *d = -1.0 * *a * P1[0] + -1.0 * *b * P1[1] + -1.0 * *c * P1[2];
 }
 
 /**
@@ -675,16 +675,16 @@ void CalculatePlane3D_Using3Depths(double P1[3], double P2[3], double P3[3], dou
  */
 int ToLineCanonicalForm(double a, double b, double *ga, double *gb, double *gc)
 {
-	double norm;
+    double norm;
 
-	/* 法線ベクトル */
-	norm = sqrt(a * a + 1.0);
-	*ga = a / (norm + DBL_MIN);
-	*gb = -1.0 / (norm + DBL_MIN);
+    /* 法線ベクトル */
+    norm = sqrt(a * a + 1.0);
+    *ga = a / (norm + DBL_MIN);
+    *gb = -1.0 / (norm + DBL_MIN);
 
-	/* 原点から平面に伸ばした垂線の長さ */
-	*gc = b;
-	return EXIT_SUCCESS;
+    /* 原点から平面に伸ばした垂線の長さ */
+    *gc = b;
+    return EXIT_SUCCESS;
 }
 
 
@@ -701,22 +701,22 @@ int ToLineCanonicalForm(double a, double b, double *ga, double *gb, double *gc)
  */
 int ToPlaneCanonicalForm(double a, double b, double c, double *ga, double *gb, double *gc, double *gd) {
 
-	/* 法線ベクトル */
-	//*ga = a;  /* 係数a */
-	//*gb = b;  /* 係数b */
-	//*gc = -1; /* 係数c */
+    /* 法線ベクトル */
+    //*ga = a;  /* 係数a */
+    //*gb = b;  /* 係数b */
+    //*gc = -1; /* 係数c */
 
-	double norm;
+    double norm;
 
-	norm = sqrt(a * a + b * b + 1.0);
-	*ga = a / (norm + DBL_MIN);
-	*gb = b / (norm + DBL_MIN);
-	*gc = -1.0 / (norm + DBL_MIN);
+    norm = sqrt(a * a + b * b + 1.0);
+    *ga = a / (norm + DBL_MIN);
+    *gb = b / (norm + DBL_MIN);
+    *gc = -1.0 / (norm + DBL_MIN);
 
-	/* 原点から平面に伸ばした垂線の長さ */
-	*gd = c;  /* 係数d */
+    /* 原点から平面に伸ばした垂線の長さ */
+    *gd = c;  /* 係数d */
 
-	return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }
 
 /**
@@ -732,21 +732,21 @@ int ToPlaneCanonicalForm(double a, double b, double c, double *ga, double *gb, d
  * @retval EXIT_FAILURE 変換失敗(0除算)
  */
 int ToPlaneGenericForm(double a, double b, double c, double d, double *ca, double *cb, double *cc) {
-	if (c != 0) {
-		/* 傾き */
-		*ca = - a / c; /* 係数a */
-		*cb = - b / c; /* 係数b */
+    if (c != 0) {
+        /* 傾き */
+        *ca = - a / c; /* 係数a */
+        *cb = - b / c; /* 係数b */
 
-		/* 切片 */
-		*cc = - d / c; /* 係数c */
-		return EXIT_SUCCESS;
+        /* 切片 */
+        *cc = - d / c; /* 係数c */
+        return EXIT_SUCCESS;
 
-	} else {
-		*ca = 0;
-		*cb = 0;
-		*cc = 0;
-		return EXIT_FAILURE;
-	}
+    } else {
+        *ca = 0;
+        *cb = 0;
+        *cc = 0;
+        return EXIT_FAILURE;
+    }
 }
 
 /**
@@ -758,10 +758,10 @@ int ToPlaneGenericForm(double a, double b, double c, double d, double *ca, doubl
  * @return 点と直線との距離
  */
 double DistanceLineToDepth(double a, double b, double c, double point[2]) {
-	double x = point[0];
-	double y = point[1];
+    double x = point[0];
+    double y = point[1];
 
-	return fabs(a * x + b * y + c) / (sqrt(a * a + b * b) + DBL_MIN);
+    return fabs(a * x + b * y + c) / (sqrt(a * a + b * b) + DBL_MIN);
 }
 
 /**
@@ -774,11 +774,11 @@ double DistanceLineToDepth(double a, double b, double c, double point[2]) {
  * @return 点と平面との距離
  */
 double DistancePlaneToDepth(double a, double b, double c, double d, double point[3]) {
-	double x = point[0];
-	double y = point[1];
-	double z = point[2];
+    double x = point[0];
+    double y = point[1];
+    double z = point[2];
 
-	return fabs(a * x + b * y + c * z + d) / (sqrt(a * a + b * b + c * c) + DBL_MIN);
+    return fabs(a * x + b * y + c * z + d) / (sqrt(a * a + b * b + c * c) + DBL_MIN);
 }
 
 /**
@@ -790,18 +790,18 @@ double DistancePlaneToDepth(double a, double b, double c, double d, double point
  * @retval 0 悪い平面 (法線ベクトル検出不可能な恐れがある)
  */
 int IsCorrectPlane(const double *vec1, const double *vec2, size_t n) {
-	double angle;
-	double t = pi() / 6.0;
+    double angle;
+    double t = pi() / 6.0;
 
-	/* なす角を求める */
-	angle = IncludedAngle(vec1, vec2, n);
+    /* なす角を求める */
+    angle = IncludedAngle(vec1, vec2, n);
 
-	/* なす角が大きすぎても小さすぎてもよい平面とはいえない */
-	if ( angle > t && angle < pi() - t ) {
-		return 1;
-	} else {
-		return 0;
-	}
+    /* なす角が大きすぎても小さすぎてもよい平面とはいえない */
+    if ( angle > t && angle < pi() - t ) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 /**
@@ -811,21 +811,21 @@ int IsCorrectPlane(const double *vec1, const double *vec2, size_t n) {
  * @return xy平面の偏角(0 <= Arg <= 2pi)
  */
 double Arg(double y, double x) {
-	double pi = atan(1.0) * 4.0;
+    double pi = atan(1.0) * 4.0;
 
-	if (x >= 0 && y >= 0) { // 第一象限
-		return atan2(y, x);
+    if (x >= 0 && y >= 0) { // 第一象限
+        return atan2(y, x);
 
-	} else if (x <= 0 && y >= 0) { // 第二象限
-		return atan2(y, x);
+    } else if (x <= 0 && y >= 0) { // 第二象限
+        return atan2(y, x);
 
-	} else if (x <= 0 && y <= 0 ) { // 第三象限
-		return 2.0 * pi + atan2(y, x);
+    } else if (x <= 0 && y <= 0 ) { // 第三象限
+        return 2.0 * pi + atan2(y, x);
 
-	} else { // 第四象限
-		return 2.0 * pi + atan2(y, x);
+    } else { // 第四象限
+        return 2.0 * pi + atan2(y, x);
 
-	}
+    }
 }
 
 /**
@@ -836,11 +836,11 @@ double Arg(double y, double x) {
  * @return xyz空間の天頂角(0 <= Arg <= pi)
  */
 double ZenithAngle(double x, double y, double z) {
-	double pi = atan(1.0) * 4.0;
-	double angle;
+    double pi = atan(1.0) * 4.0;
+    double angle;
 
-	angle = atan2(z, sqrt(x * x + y * y));
-	return pi / 2.0 - angle;
+    angle = atan2(z, sqrt(x * x + y * y));
+    return pi / 2.0 - angle;
 }
 
 /**
@@ -905,8 +905,14 @@ double cbrt_newton(double a, double x) {
     return x;
 }
 
+/**
+ * 除算を計算する
+ * @param[in] x 分子
+ * @param[in] y 分母
+ * @return x/y
+ */
 double frac(double x, double y){
-	return x / (y + DBL_MIN);
+    return x / (y + DBL_MIN);
 }
 
 /* vim: set foldmethod=marker: set fenc=utf-8: */

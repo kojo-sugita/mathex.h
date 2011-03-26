@@ -56,7 +56,7 @@ double Sigmoid(double x, double gain);
 double pi(void);
 double to_deg(double);
 double to_rad(double a);
-double logn( int base, int antilog );
+double logn(double base, double antilog);
 double cbrt_newton(double a, double x);
 double frac(double x, double y);
 
