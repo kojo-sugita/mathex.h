@@ -1,7 +1,6 @@
-
 /** 
  * @file    mathex.c
- * @brief   math.h‚ÌŠg’£
+ * @brief   math.hã®æ‹¡å¼µ
  *
  * @author  Kojo Sugita
  * @date    2009-08-05
@@ -15,10 +14,10 @@
 #include "mathex.h"
 
 /**
- * ‘˜a‚ğŒvZ‚·‚é
- * @param[in] a ‘˜a‚ğŒvZ‚·‚é”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return ‘˜a
+ * ç·å’Œã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] a ç·å’Œã‚’è¨ˆç®—ã™ã‚‹é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return ç·å’Œ
  */
 double Summation(const double *a, size_t n) {
 	double sum = 0.0;
@@ -30,10 +29,10 @@ double Summation(const double *a, size_t n) {
 }
 
 /**
- * •½•û˜a‚ğŒvZ‚·‚é
- * @param[in] a •½•û˜a‚ğŒvZ‚·‚é”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return •½•û˜a
+ * å¹³æ–¹å’Œã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] a å¹³æ–¹å’Œã‚’è¨ˆç®—ã™ã‚‹é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return å¹³æ–¹å’Œ
  */
 double SumOfSquares(const double *a, size_t n) {
 	double sum = 0.0;
@@ -45,11 +44,11 @@ double SumOfSquares(const double *a, size_t n) {
 }
 
 /**
- * Ï˜a‚ğŒvZ‚·‚é
- * @param[in] a1 Ï˜a‚ğŒvZ‚·‚é”z—ñ1
- * @param[in] a2 Ï˜a‚ğŒvZ‚·‚é”z—ñ2
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return Ï˜a
+ * ç©å’Œã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] a1 ç©å’Œã‚’è¨ˆç®—ã™ã‚‹é…åˆ—1
+ * @param[in] a2 ç©å’Œã‚’è¨ˆç®—ã™ã‚‹é…åˆ—2
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return ç©å’Œ
  */
 double SumOfProduct(const double *a1, const double *a2, size_t n) {
 	double sum = 0.0;
@@ -61,10 +60,10 @@ double SumOfProduct(const double *a1, const double *a2, size_t n) {
 }
 
 /**
- * •½‹Ï’l‚ğŒvZ‚·‚é
- * @param[in] a “ü—Í”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return •½‹Ï’l
+ * å¹³å‡å€¤ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] a å…¥åŠ›é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return å¹³å‡å€¤
  */
 double Average(const double *a, size_t n) {
 	size_t i;
@@ -79,10 +78,10 @@ double Average(const double *a, size_t n) {
 }
 
 /**
- * •ªU‚ğŒvZ‚·‚é
- * @param[in] a “ü—Í”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return •ªU
+ * åˆ†æ•£ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] a å…¥åŠ›é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return åˆ†æ•£
  */
 double Variance(const double *a, size_t n) {
 	size_t i;
@@ -93,19 +92,19 @@ double Variance(const double *a, size_t n) {
 	if ( n < 1 ) return 0.0;
 
 	for (i = 0; i < n; i++) {
-		sum += a[i]; /* ˜a */
-		sqsum += a[i] * a[i]; /* •½•û˜a */
+		sum += a[i]; /* å’Œ */
+		sqsum += a[i] * a[i]; /* å¹³æ–¹å’Œ */
 	}
 
-	avg = sum / (double)n; /* •½‹Ï */
-	return sqsum / (double)n - avg * avg; /* •ªU */
+	avg = sum / (double)n; /* å¹³å‡ */
+	return sqsum / (double)n - avg * avg; /* åˆ†æ•£ */
 }
 
 /**
- * •s•Î•ªU‚ğŒvZ‚·‚é
- * @param[in] a “ü—Í”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return •s•Î•ªU
+ * ä¸ååˆ†æ•£ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] a å…¥åŠ›é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return ä¸ååˆ†æ•£
  */
 double UnbiasedVariance(const double *a, size_t n) {
     size_t i;
@@ -116,20 +115,20 @@ double UnbiasedVariance(const double *a, size_t n) {
     if ( n < 2 ) return 0.0;
 
     for (i = 0; i < n; i++) {
-        sum += a[i]; /* ˜a */
-        sqsum += a[i] * a[i]; /* •½•û˜a */
+        sum += a[i]; /* å’Œ */
+        sqsum += a[i] * a[i]; /* å¹³æ–¹å’Œ */
     }
 
-    avg = sum / (double)n; /* •½‹Ï */
-    return sqsum / (double)(n - 1) - avg * avg; /* •s•Î•ªU */
+    avg = sum / (double)n; /* å¹³å‡ */
+    return sqsum / (double)(n - 1) - avg * avg; /* ä¸ååˆ†æ•£ */
 }
 
 /**
- * ‹¤•ªU‚ğŒvZ‚·‚é
- * @param[in] x “ü—Í”z—ñ1
- * @param[in] y “ü—Í”z—ñ2
- * @param[in] n x‚Æy‚Ì—v‘f”
- * @return ‹¤•ªU
+ * å…±åˆ†æ•£ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] x å…¥åŠ›é…åˆ—1
+ * @param[in] y å…¥åŠ›é…åˆ—2
+ * @param[in] n xã¨yã®è¦ç´ æ•°
+ * @return å…±åˆ†æ•£
  */
 double Covariance(const double *x, const double *y, int n) {
     int i;
@@ -140,21 +139,21 @@ double Covariance(const double *x, const double *y, int n) {
     if ( n < 1 ) return 0.0;
 
     for (i = 0; i < n; i++) {
-        sum_x += x[i]; /* x‚Ì˜a */
-        sum_y += y[i]; /* y‚Ì˜a */
+        sum_x += x[i]; /* xã®å’Œ */
+        sum_y += y[i]; /* yã®å’Œ */
         sumprod += x[i] * y[i];
     }
 
-    avg_x = sum_x / (double)n; /* x‚Ì•½‹Ï */
-    avg_y = sum_y / (double)n; /* y‚Ì•½‹Ï */
-    return sumprod / (double)n - avg_x * avg_y; /* ‹¤•ªU */
+    avg_x = sum_x / (double)n; /* xã®å¹³å‡ */
+    avg_y = sum_y / (double)n; /* yã®å¹³å‡ */
+    return sumprod / (double)n - avg_x * avg_y; /* å…±åˆ†æ•£ */
 }
 
 /**
- * •W€•Î·‚ğŒvZ‚·‚é
- * @param[in] a “ü—Í”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return •W€•Î·
+ * æ¨™æº–åå·®ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] a å…¥åŠ›é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return æ¨™æº–åå·®
  */
 double StdDev(const double *a, size_t n) {
 	size_t i;
@@ -165,23 +164,23 @@ double StdDev(const double *a, size_t n) {
 	if ( n < 1 ) return 0.0;
 
 	for (i = 0; i < n; i++) {
-		sum += a[i]; /* ˜a */
-		sqsum += a[i] * a[i]; /* •½•û˜a */
+		sum += a[i]; /* å’Œ */
+		sqsum += a[i] * a[i]; /* å¹³æ–¹å’Œ */
 	}
 
-	avg = sum / (double)n; /* •½‹Ï */
-	var = sqsum / (double)n - avg * avg; /* •ªU */
+	avg = sum / (double)n; /* å¹³å‡ */
+	var = sqsum / (double)n - avg * avg; /* åˆ†æ•£ */
 
 	if ( var < 0.0 ) var = 0.0;
-	return sqrt(var); /* •W€•Î· */
+	return sqrt(var); /* æ¨™æº–åå·® */
 
 }
 
 /**
- * Å‘å’l‚ğ‹‚ß‚é
- * @param[in] a “ü—Í”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return Å‘å’l
+ * æœ€å¤§å€¤ã‚’æ±‚ã‚ã‚‹
+ * @param[in] a å…¥åŠ›é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return æœ€å¤§å€¤
  */
 double Max(const double *a, size_t n) {
 	size_t i;
@@ -198,10 +197,10 @@ double Max(const double *a, size_t n) {
 }
 
 /**
- * Å‘å’l‚ğ‹‚ß‚é(intŒ^”z—ñ)
- * @param[in] a “ü—Í”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return Å‘å’l
+ * æœ€å¤§å€¤ã‚’æ±‚ã‚ã‚‹(intå‹é…åˆ—)
+ * @param[in] a å…¥åŠ›é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return æœ€å¤§å€¤
  */
 int MaxInt(const int *a, size_t n) {
 	size_t i;
@@ -219,10 +218,10 @@ int MaxInt(const int *a, size_t n) {
 
 
 /**
- * Å¬’l‚ğ‹‚ß‚é
- * @param[in] a “ü—Í”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return Å¬’l
+ * æœ€å°å€¤ã‚’æ±‚ã‚ã‚‹
+ * @param[in] a å…¥åŠ›é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return æœ€å°å€¤
  */
 double Min(const double *a, size_t n) {
 	size_t i;
@@ -239,10 +238,10 @@ double Min(const double *a, size_t n) {
 }
 
 /**
- * Å¬’l‚ğ‹‚ß‚é(intŒ^”z—ñ)
- * @param[in] a “ü—Í”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @return Å¬’l
+ * æœ€å°å€¤ã‚’æ±‚ã‚ã‚‹(intå‹é…åˆ—)
+ * @param[in] a å…¥åŠ›é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @return æœ€å°å€¤
  */
 int MinInt(const int *a, size_t n) {
 	size_t i;
@@ -259,13 +258,13 @@ int MinInt(const int *a, size_t n) {
 }
 
 /**
- * Å‘å’l‚ÆÅ¬’l‚ğ‹‚ß‚é
- * @param[in] a “ü—Í”z—ñ
- * @param[in] n ”z—ñ‚Ì—v‘f”
- * @param[out] max Å‘å’l
- * @param[out] min Å¬’l
- * @retval 1 Å‘å’l‚ÆÅ¬’l‚ğæ“¾
- * @retval 0 ”z—ñ‚Ì—v‘f‚ª0
+ * æœ€å¤§å€¤ã¨æœ€å°å€¤ã‚’æ±‚ã‚ã‚‹
+ * @param[in] a å…¥åŠ›é…åˆ—
+ * @param[in] n é…åˆ—ã®è¦ç´ æ•°
+ * @param[out] max æœ€å¤§å€¤
+ * @param[out] min æœ€å°å€¤
+ * @retval 1 æœ€å¤§å€¤ã¨æœ€å°å€¤ã‚’å–å¾—
+ * @retval 0 é…åˆ—ã®è¦ç´ ãŒ0
  */
 int MaxMin(const double *a, size_t n, double *max, double *min) {
 	size_t i;
@@ -284,9 +283,9 @@ int MaxMin(const double *a, size_t n, double *max, double *min) {
 
 
 /**
- * ŠKæ‚ğŒvZ‚·‚é
- * @param[in] n ®” 
- * @return ŠKæ
+ * éšä¹—ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] n æ•´æ•° 
+ * @return éšä¹—
  */
 int Factorial(int n) {
 	int fact = n;
@@ -300,36 +299,36 @@ int Factorial(int n) {
 }
 
 /**
- * ‡—ñ‘g‚İ‡‚í‚¹‚Ì‘”‚ğŒvZ‚·‚é
- * @param[in] n nPr‚Ìn 
- * @param[in] r nPr‚Ìr 
- * @return ‡—ñ‘g‚İ‡‚í‚¹‚Ì‘”
+ * é †åˆ—çµ„ã¿åˆã‚ã›ã®ç·æ•°ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] n nPrã®n 
+ * @param[in] r nPrã®r 
+ * @return é †åˆ—çµ„ã¿åˆã‚ã›ã®ç·æ•°
  */
 int Permutation(int n, int r) {
 	if (r <= 0) return 1;
-	/* 0œZ‚Í‚ ‚è‚¦‚È‚¢ */
+	/* 0é™¤ç®—ã¯ã‚ã‚Šãˆãªã„ */
 	return Factorial(n) / Factorial(n - r);
 }
 
 /**
- * ‘g‚İ‡‚í‚¹‚Ì‘”‚ğŒvZ‚·‚é
- * @param[in] n nCr‚Ìn 
- * @param[in] r nCr‚Ìr 
- * @return ‘g‚İ‡‚í‚¹‚Ì‘”
+ * çµ„ã¿åˆã‚ã›ã®ç·æ•°ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] n nCrã®n 
+ * @param[in] r nCrã®r 
+ * @return çµ„ã¿åˆã‚ã›ã®ç·æ•°
  */
 int Combination(int n, int r) {
 	if (r <= 0) return 1;
-	/* 0œZ‚Í‚ ‚è‚¦‚È‚¢ */
+	/* 0é™¤ç®—ã¯ã‚ã‚Šãˆãªã„ */
 	return Factorial(n) / (Factorial(r) * Factorial(n - r));
 }
 
 
 /**
- * 2“_ŠÔ‚Ì‹——£‚ğ‹‚ß‚é
- * @param[in] p1 “_‚ÌÀ•W1
- * @param[in] p2 “_‚ÌÀ•W2
- * @param[in] n ŸŒ³”
- * @return p1‚Æp2ŠÔ‚Ì‹——£
+ * 2ç‚¹é–“ã®è·é›¢ã‚’æ±‚ã‚ã‚‹
+ * @param[in] p1 ç‚¹ã®åº§æ¨™1
+ * @param[in] p2 ç‚¹ã®åº§æ¨™2
+ * @param[in] n æ¬¡å…ƒæ•°
+ * @return p1ã¨p2é–“ã®è·é›¢
  */
 double Distance(const double *p1, const double *p2, size_t n) {
 	size_t i;
@@ -342,14 +341,14 @@ double Distance(const double *p1, const double *p2, size_t n) {
 }
 
 /**
- * 2“_p1,p2‚©‚ç‚È‚éü•ª‚ğm:n‚É“à•ª‚·‚é“_‚ğ‹‚ß‚é (2ŸŒ³)
- * @param[in] p1 “_‚ÌÀ•W1
- * @param[in] p2 “_‚ÌÀ•W2
- * @param[in] m m:n‚Ìm
- * @param[in] n m:n‚Ìn
- * @param[out] result “à•ª“_
- * @retval 1 ³íI—¹
- * @retval 0 ˆÙíI—¹
+ * 2ç‚¹p1,p2ã‹ã‚‰ãªã‚‹ç·šåˆ†ã‚’m:nã«å†…åˆ†ã™ã‚‹ç‚¹ã‚’æ±‚ã‚ã‚‹ (2æ¬¡å…ƒ)
+ * @param[in] p1 ç‚¹ã®åº§æ¨™1
+ * @param[in] p2 ç‚¹ã®åº§æ¨™2
+ * @param[in] m m:nã®m
+ * @param[in] n m:nã®n
+ * @param[out] result å†…åˆ†ç‚¹
+ * @retval 1 æ­£å¸¸çµ‚äº†
+ * @retval 0 ç•°å¸¸çµ‚äº†
  */
 int DivideInternally2D(const double p1[2], const double p2[2], int m, int n, double result[2]) {
 	if (m < 1 && n < 1) return 0;
@@ -361,14 +360,14 @@ int DivideInternally2D(const double p1[2], const double p2[2], int m, int n, dou
 }
 
 /**
- * 2“_p1,p2‚©‚ç‚È‚éü•ª‚ğm:n‚ÉŠO•ª‚·‚é“_‚ğ‹‚ß‚é (2ŸŒ³)
- * @param[in] p1 “_‚ÌÀ•W1
- * @param[in] p2 “_‚ÌÀ•W2
- * @param[in] m m:n‚Ìm
- * @param[in] n m:n‚Ìn
- * @param[out] result ŠO•ª“_
- * @retval 1 ³íI—¹
- * @retval 0 ˆÙíI—¹
+ * 2ç‚¹p1,p2ã‹ã‚‰ãªã‚‹ç·šåˆ†ã‚’m:nã«å¤–åˆ†ã™ã‚‹ç‚¹ã‚’æ±‚ã‚ã‚‹ (2æ¬¡å…ƒ)
+ * @param[in] p1 ç‚¹ã®åº§æ¨™1
+ * @param[in] p2 ç‚¹ã®åº§æ¨™2
+ * @param[in] m m:nã®m
+ * @param[in] n m:nã®n
+ * @param[out] result å¤–åˆ†ç‚¹
+ * @retval 1 æ­£å¸¸çµ‚äº†
+ * @retval 0 ç•°å¸¸çµ‚äº†
  */
 int DivideExternally2D(const double p1[2], const double p2[2], int m, int n, double result[2]) {
 	if (m - n == 0) return 0;
@@ -380,12 +379,12 @@ int DivideExternally2D(const double p1[2], const double p2[2], int m, int n, dou
 }
 
 /**
- * 3“_p1,p2,p3‚©‚ç‚È‚éOŠpŒ`‚ÌdS‚ğ‹‚ß‚é (2ŸŒ³)
- * @param[in] p1 “_‚ÌÀ•W1
- * @param[in] p2 “_‚ÌÀ•W2
- * @param[in] p3 “_‚ÌÀ•W3
- * @param[out] result OŠpŒ`‚ÌdS
- * @return result‚Ìæ“ªƒAƒhƒŒƒX
+ * 3ç‚¹p1,p2,p3ã‹ã‚‰ãªã‚‹ä¸‰è§’å½¢ã®é‡å¿ƒã‚’æ±‚ã‚ã‚‹ (2æ¬¡å…ƒ)
+ * @param[in] p1 ç‚¹ã®åº§æ¨™1
+ * @param[in] p2 ç‚¹ã®åº§æ¨™2
+ * @param[in] p3 ç‚¹ã®åº§æ¨™3
+ * @param[out] result ä¸‰è§’å½¢ã®é‡å¿ƒ
+ * @return resultã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
  */
 double *Triangle_CenterOfGravity(const double p1[2], const double p2[2], const double p3[2], double result[2]) {
 	result[0] = (p1[0] + p2[0] + p3[0]) / 3.0;
@@ -394,12 +393,12 @@ double *Triangle_CenterOfGravity(const double p1[2], const double p2[2], const d
 }
 
 /**
- * 2“_‚ğŒ‹‚ÔƒxƒNƒgƒ‹‚ğ‹‚ß‚é
- * @param[in] p1 “_‚ÌÀ•W1
- * @param[in] p2 “_‚ÌÀ•W2
- * @param[in] n ŸŒ³”
- * @param[out] vec ƒxƒNƒgƒ‹
- * @return vec ‚Ìæ“ªƒAƒhƒŒƒX
+ * 2ç‚¹ã‚’çµã¶ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã‚‹
+ * @param[in] p1 ç‚¹ã®åº§æ¨™1
+ * @param[in] p2 ç‚¹ã®åº§æ¨™2
+ * @param[in] n æ¬¡å…ƒæ•°
+ * @param[out] vec ãƒ™ã‚¯ãƒˆãƒ«
+ * @return vec ã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
  */
 double *ToVector(const double *p1, const double *p2, size_t n, double *vec) {
 	size_t i;
@@ -411,12 +410,12 @@ double *ToVector(const double *p1, const double *p2, size_t n, double *vec) {
 }
 
 /**
- * ƒxƒNƒgƒ‹‚Ì˜a‚ğ‹‚ß‚é
- * @param[in] vec1 ƒxƒNƒgƒ‹1
- * @param[in] vec2 ƒxƒNƒgƒ‹2
- * @param[out] sumVec ƒxƒNƒgƒ‹‚Ì˜a
- * @param[in] n ŸŒ³”
- * @return sumVec‚Ìæ“ªƒAƒhƒŒƒX
+ * ãƒ™ã‚¯ãƒˆãƒ«ã®å’Œã‚’æ±‚ã‚ã‚‹
+ * @param[in] vec1 ãƒ™ã‚¯ãƒˆãƒ«1
+ * @param[in] vec2 ãƒ™ã‚¯ãƒˆãƒ«2
+ * @param[out] sumVec ãƒ™ã‚¯ãƒˆãƒ«ã®å’Œ
+ * @param[in] n æ¬¡å…ƒæ•°
+ * @return sumVecã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
  */
 double *VectorSum(const double *vec1, const double *vec2, double *sumVec, size_t n) {
 	while (n--) 
@@ -425,12 +424,12 @@ double *VectorSum(const double *vec1, const double *vec2, double *sumVec, size_t
 }
 
 /**
- * ƒxƒNƒgƒ‹‚Ì·‚ğ‹‚ß‚é
- * @param[in] vec1 ƒxƒNƒgƒ‹1
- * @param[in] vec2 ƒxƒNƒgƒ‹2
- * @param[out] sumVec ƒxƒNƒgƒ‹‚Ì˜a
- * @param[in] n ŸŒ³”
- * @return diffVec‚Ìæ“ªƒAƒhƒŒƒX
+ * ãƒ™ã‚¯ãƒˆãƒ«ã®å·®ã‚’æ±‚ã‚ã‚‹
+ * @param[in] vec1 ãƒ™ã‚¯ãƒˆãƒ«1
+ * @param[in] vec2 ãƒ™ã‚¯ãƒˆãƒ«2
+ * @param[out] sumVec ãƒ™ã‚¯ãƒˆãƒ«ã®å’Œ
+ * @param[in] n æ¬¡å…ƒæ•°
+ * @return diffVecã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
  */
 double *VectorDifference(const double *vec1, const double *vec2, double *diffVec, size_t n) {
 	while (n--) 
@@ -439,10 +438,10 @@ double *VectorDifference(const double *vec1, const double *vec2, double *diffVec
 }
 
 /**
- * ƒxƒNƒgƒ‹‚Ì’·‚³(ƒmƒ‹ƒ€)‚ğŒvZ‚·‚é
- * @param[in] vec ƒxƒNƒgƒ‹
- * @param[in] n ƒxƒNƒgƒ‹‚ÌŸŒ³”
- * @return vec ‚Ì’·‚³
+ * ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•(ãƒãƒ«ãƒ )ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] vec ãƒ™ã‚¯ãƒˆãƒ«
+ * @param[in] n ãƒ™ã‚¯ãƒˆãƒ«ã®æ¬¡å…ƒæ•°
+ * @return vec ã®é•·ã•
  */
 double Norm(const double *vec, size_t n) {
     size_t i;
@@ -456,11 +455,11 @@ double Norm(const double *vec, size_t n) {
 }
 
 /**
- * ƒxƒNƒgƒ‹‚Ì“àÏ‚ğŒvZ‚·‚é
- * @param[in] vec1 ƒxƒNƒgƒ‹1
- * @param[in] vec2 ƒxƒNƒgƒ‹2
- * @param[in] n ƒxƒNƒgƒ‹‚ÌŸŒ³”
- * @return vec1 ‚Æ vec2 ‚Ì“àÏ
+ * ãƒ™ã‚¯ãƒˆãƒ«ã®å†…ç©ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] vec1 ãƒ™ã‚¯ãƒˆãƒ«1
+ * @param[in] vec2 ãƒ™ã‚¯ãƒˆãƒ«2
+ * @param[in] n ãƒ™ã‚¯ãƒˆãƒ«ã®æ¬¡å…ƒæ•°
+ * @return vec1 ã¨ vec2 ã®å†…ç©
  */
 double InnerProduct(const double *vec1, const double *vec2, size_t n) {
     size_t i;
@@ -474,11 +473,11 @@ double InnerProduct(const double *vec1, const double *vec2, size_t n) {
 }
 
 /**
- * 2 ‚Â‚ÌƒxƒNƒgƒ‹‚Ì‚È‚·Šp‚ğŒvZ‚·‚é
- * @param[in] vec1 ƒxƒNƒgƒ‹1
- * @param[in] vec2 ƒxƒNƒgƒ‹2
- * @param[in] n ƒxƒNƒgƒ‹‚ÌŸŒ³”
- * @return vec1 ‚Æ vec2 ‚Ì‚È‚·Šp
+ * 2 ã¤ã®ãƒ™ã‚¯ãƒˆãƒ«ã®ãªã™è§’ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] vec1 ãƒ™ã‚¯ãƒˆãƒ«1
+ * @param[in] vec2 ãƒ™ã‚¯ãƒˆãƒ«2
+ * @param[in] n ãƒ™ã‚¯ãƒˆãƒ«ã®æ¬¡å…ƒæ•°
+ * @return vec1 ã¨ vec2 ã®ãªã™è§’
  */
 double IncludedAngle(const double *vec1, const double *vec2, size_t n) {
     return acos(InnerProduct(vec1, vec2, n) / 
@@ -486,27 +485,27 @@ double IncludedAngle(const double *vec1, const double *vec2, size_t n) {
 }
 
 /**
- * ’PˆÊƒxƒNƒgƒ‹‚ğ‹‚ß‚é
- * @param[in] vec ƒxƒNƒgƒ‹
- * @param[out] unitVec ’PˆÊƒxƒNƒgƒ‹
- * @param[in] n ƒxƒNƒgƒ‹‚ÌŸŒ³”
- * @retval 1 ’PˆÊƒxƒNƒgƒ‹‚ğ³í‚Éæ“¾
- * @retval 0 ƒxƒNƒgƒ‹‚ªƒ[ƒƒxƒNƒgƒ‹
+ * å˜ä½ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã‚‹
+ * @param[in] vec ãƒ™ã‚¯ãƒˆãƒ«
+ * @param[out] unitVec å˜ä½ãƒ™ã‚¯ãƒˆãƒ«
+ * @param[in] n ãƒ™ã‚¯ãƒˆãƒ«ã®æ¬¡å…ƒæ•°
+ * @retval 1 å˜ä½ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ­£å¸¸ã«å–å¾—
+ * @retval 0 ãƒ™ã‚¯ãƒˆãƒ«ãŒã‚¼ãƒ­ãƒ™ã‚¯ãƒˆãƒ«
  */
 int UnitVector(const double *vec, double *unitVec, size_t n) {
 	size_t i;
 	double norm = Norm(vec, n);
 
-	/* ƒxƒNƒgƒ‹‚Ìƒmƒ‹ƒ€‚ª0‚Å‚È‚¢‚©? */
+	/* ãƒ™ã‚¯ãƒˆãƒ«ã®ãƒãƒ«ãƒ ãŒ0ã§ãªã„ã‹? */
 	if (norm > 0.0) { 
-		/* ’PˆÊƒxƒNƒgƒ‹‚ğæ“¾ */
+		/* å˜ä½ãƒ™ã‚¯ãƒˆãƒ«ã‚’å–å¾— */
 		for (i = 0; i < n; i++) {
 			unitVec[i] = vec[i] / Norm(vec, n);
 		}
 		return 1;
 
 	} else {
-		/* Œ‹‰Ê‚É‚·‚×‚Ä0‚ğŠi”[‚·‚é */
+		/* çµæœã«ã™ã¹ã¦0ã‚’æ ¼ç´ã™ã‚‹ */
 		for (i = 0; i < n; i++) {
 			unitVec[i] = 0;
 		}
@@ -515,12 +514,12 @@ int UnitVector(const double *vec, double *unitVec, size_t n) {
 }
 
 /**
- * 3ŸŒ³‚Ì–@üƒxƒNƒgƒ‹‚ğ‹‚ß‚é
- * @param[in] p1 À•W1
- * @param[in] p2 À•W2
- * @param[in] p3 À•W3
- * @param[in] result –@üƒxƒNƒgƒ‹
- * @return result‚Ìæ“ªƒAƒhƒŒƒX
+ * 3æ¬¡å…ƒã®æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã‚‹
+ * @param[in] p1 åº§æ¨™1
+ * @param[in] p2 åº§æ¨™2
+ * @param[in] p3 åº§æ¨™3
+ * @param[in] result æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«
+ * @return resultã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
  */
 double *NormalVector3D(const double *p1, const double *p2, const double *p3, double *result) {
 	double vec1[3];
@@ -535,11 +534,11 @@ double *NormalVector3D(const double *p1, const double *p2, const double *p3, dou
 }
 
 /**
- * 3ŸŒ³ƒxƒNƒgƒ‹‚ÌŠOÏ‚ğŒvZ‚·‚é
- * @param[in] vec1 ƒxƒNƒgƒ‹1
- * @param[in] vec2 ƒxƒNƒgƒ‹2
- * @param[out] result ƒxƒNƒgƒ‹‚ÌŠOÏ
- * @return result‚Ìæ“ªƒAƒhƒŒƒX
+ * 3æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«ã®å¤–ç©ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] vec1 ãƒ™ã‚¯ãƒˆãƒ«1
+ * @param[in] vec2 ãƒ™ã‚¯ãƒˆãƒ«2
+ * @param[out] result ãƒ™ã‚¯ãƒˆãƒ«ã®å¤–ç©
+ * @return resultã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
  */
 double *CrossProduct3D(const double *vec1, const double *vec2, double *result) {
 	result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];
@@ -550,12 +549,12 @@ double *CrossProduct3D(const double *vec1, const double *vec2, double *result) {
 }
 
 /**
- * 2 ‚Â‚ÌƒxƒNƒgƒ‹‚Ì—Ş—“x‚ğŒvZ‚·‚é
- * @param[in] vec1 ƒxƒNƒgƒ‹1
- * @param[in] vec2 ƒxƒNƒgƒ‹2
- * @param[in] n ƒxƒNƒgƒ‹‚ÌŸŒ³”
- * @return vec1 ‚Æ vec2 ‚Ì—Ş—“x (-1.0 <= return <= 1.0) 1.0‚É‹ß‚¢‚Ù‚Ç—Ş—“x‘å
- * @attention ƒ[ƒƒxƒNƒgƒ‹‚ªˆø”‚É“n‚³‚ê‚½ê‡0‚ğ•Ô‚·
+ * 2 ã¤ã®ãƒ™ã‚¯ãƒˆãƒ«ã®é¡ä¼¼åº¦ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] vec1 ãƒ™ã‚¯ãƒˆãƒ«1
+ * @param[in] vec2 ãƒ™ã‚¯ãƒˆãƒ«2
+ * @param[in] n ãƒ™ã‚¯ãƒˆãƒ«ã®æ¬¡å…ƒæ•°
+ * @return vec1 ã¨ vec2 ã®é¡ä¼¼åº¦ (-1.0 <= return <= 1.0) 1.0ã«è¿‘ã„ã»ã©é¡ä¼¼åº¦å¤§
+ * @attention ã‚¼ãƒ­ãƒ™ã‚¯ãƒˆãƒ«ãŒå¼•æ•°ã«æ¸¡ã•ã‚ŒãŸå ´åˆ0ã‚’è¿”ã™
  */
 double VectorSimilarity(const double *vec1, const double *vec2, size_t n) {
     return InnerProduct(vec1, vec2, n) / 
@@ -563,11 +562,11 @@ double VectorSimilarity(const double *vec1, const double *vec2, size_t n) {
 }
 
 /**
- * ³‹K‰»‹——£‚ğŒvZ‚·‚é
- * @param[in] vec1 ƒxƒNƒgƒ‹1
- * @param[in] vec2 ƒxƒNƒgƒ‹2
- * @param[in] n ƒxƒNƒgƒ‹‚ÌŸŒ³”
- * @return vec1 ‚Æ vec2 ‚Ì³‹K‰»‹——£
+ * æ­£è¦åŒ–è·é›¢ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] vec1 ãƒ™ã‚¯ãƒˆãƒ«1
+ * @param[in] vec2 ãƒ™ã‚¯ãƒˆãƒ«2
+ * @param[in] n ãƒ™ã‚¯ãƒˆãƒ«ã®æ¬¡å…ƒæ•°
+ * @return vec1 ã¨ vec2 ã®æ­£è¦åŒ–è·é›¢
  */
 double NormalizedVectorDistance(const double *vec1, const double *vec2, size_t n) {
 	size_t i;
@@ -583,12 +582,12 @@ double NormalizedVectorDistance(const double *vec1, const double *vec2, size_t n
 }
 
 /**
- * 3ŸŒ³‹óŠÔã‚Ì“_p1‚Æ“_p2‚ğŒ‹‚Ô’¼üã‚É“_p‚ª‘¶İ‚·‚é‚©‚ğ”»’è‚·‚é
- * @param[in] p1 “_1
- * @param[in] p2 “_2
- * @param[in] p 3ŸŒ³‹óŠÔã‚Ì‚ ‚é“_
- * @retval 1 p1‚Æp2‚ğŒ‹‚Ô’¼üã‚Ép‚ª‘¶İ‚·‚é
- * @rarval 0 p1‚Æp2‚ğŒ‹‚Ô’¼üã‚Ép‚ª‘¶İ‚µ‚È‚¢
+ * 3æ¬¡å…ƒç©ºé–“ä¸Šã®ç‚¹p1ã¨ç‚¹p2ã‚’çµã¶ç›´ç·šä¸Šã«ç‚¹pãŒå­˜åœ¨ã™ã‚‹ã‹ã‚’åˆ¤å®šã™ã‚‹
+ * @param[in] p1 ç‚¹1
+ * @param[in] p2 ç‚¹2
+ * @param[in] p 3æ¬¡å…ƒç©ºé–“ä¸Šã®ã‚ã‚‹ç‚¹
+ * @retval 1 p1ã¨p2ã‚’çµã¶ç›´ç·šä¸Šã«pãŒå­˜åœ¨ã™ã‚‹
+ * @rarval 0 p1ã¨p2ã‚’çµã¶ç›´ç·šä¸Šã«pãŒå­˜åœ¨ã—ãªã„
  */
 int IsDepthOnLine3D(const double *p1, const double *p2, const double *p) {
 	double x = p[0];
@@ -607,19 +606,19 @@ int IsDepthOnLine3D(const double *p1, const double *p2, const double *p) {
 }
 
 /**
- * 3ŸŒ³•½–Ê‚ğì¬‚·‚é
- * @param[in] AB 3ŸŒ³ƒxƒNƒgƒ‹1
- * @param[in] AC 3ŸŒ³ƒxƒNƒgƒ‹2
- * @param[in] A À•W1
- * @param[out] a •½–Ê‚Ì•û’ö® ax + by + cz + d = 0‚ÌŒW”‚Ì a
- * @param[out] b •½–Ê‚Ì•û’ö® ax + by + cz + d = 0 ‚ÌŒW”‚Ì b 
- * @param[out] c •½–Ê‚Ì•û’ö® ax + by + cz + d = 0 ‚ÌŒW”‚Ì c
- * @param[out] d •½–Ê‚Ì•û’ö® ax + by + cz + d = 0 ‚ÌŒW”‚Ì d
+ * 3æ¬¡å…ƒå¹³é¢ã‚’ä½œæˆã™ã‚‹
+ * @param[in] AB 3æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«1
+ * @param[in] AC 3æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«2
+ * @param[in] A åº§æ¨™1
+ * @param[out] a å¹³é¢ã®æ–¹ç¨‹å¼ ax + by + cz + d = 0ã®ä¿‚æ•°ã® a
+ * @param[out] b å¹³é¢ã®æ–¹ç¨‹å¼ ax + by + cz + d = 0 ã®ä¿‚æ•°ã® b 
+ * @param[out] c å¹³é¢ã®æ–¹ç¨‹å¼ ax + by + cz + d = 0 ã®ä¿‚æ•°ã® c
+ * @param[out] d å¹³é¢ã®æ–¹ç¨‹å¼ ax + by + cz + d = 0 ã®ä¿‚æ•°ã® d
  */
 void CalculatePlane3D(const double *AB, const double *AC, const double *A, double *a, double *b, double *c, double *d) {
 	double norm;
 
-	/* –@üƒxƒNƒgƒ‹ */
+	/* æ³•ç·šãƒ™ã‚¯ãƒˆãƒ« */
 	*a = AB[1] * AC[2] - AB[2] * AC[1];
 	*b = AB[2] * AC[0] - AB[0] * AC[2];
 	*c = AB[0] * AC[1] - AB[1] * AC[0];
@@ -629,29 +628,29 @@ void CalculatePlane3D(const double *AB, const double *AC, const double *A, doubl
 	*b = *b / (norm + DBL_MIN);
 	*c = *c / (norm + DBL_MIN);
 
-	/* Œ´“_‚©‚ç•½–Ê‚ÉL‚Î‚µ‚½‚ü‚Ì’·‚³ */
+	/* åŸç‚¹ã‹ã‚‰å¹³é¢ã«ä¼¸ã°ã—ãŸå‚ç·šã®é•·ã• */
 	*d = -1.0 * *a * A[0] + -1.0 * *b * A[1] + -1.0 * *c * A[2];
 }
 
 /**
- * 3“_‚©‚ç3ŸŒ³•½–Ê‚ğì¬‚·‚é
- * @param[in] P1 “_1
- * @param[in] P2 “_2
- * @param[in] P3 “_3
- * @param[out] a •½–Ê‚Ì•û’ö® ax + by + cz + d = 0‚ÌŒW”‚Ì a
- * @param[out] b •½–Ê‚Ì•û’ö® ax + by + cz + d = 0 ‚ÌŒW”‚Ì b 
- * @param[out] c •½–Ê‚Ì•û’ö® ax + by + cz + d = 0 ‚ÌŒW”‚Ì c
- * @param[out] d •½–Ê‚Ì•û’ö® ax + by + cz + d = 0 ‚ÌŒW”‚Ì d
+ * 3ç‚¹ã‹ã‚‰3æ¬¡å…ƒå¹³é¢ã‚’ä½œæˆã™ã‚‹
+ * @param[in] P1 ç‚¹1
+ * @param[in] P2 ç‚¹2
+ * @param[in] P3 ç‚¹3
+ * @param[out] a å¹³é¢ã®æ–¹ç¨‹å¼ ax + by + cz + d = 0ã®ä¿‚æ•°ã® a
+ * @param[out] b å¹³é¢ã®æ–¹ç¨‹å¼ ax + by + cz + d = 0 ã®ä¿‚æ•°ã® b 
+ * @param[out] c å¹³é¢ã®æ–¹ç¨‹å¼ ax + by + cz + d = 0 ã®ä¿‚æ•°ã® c
+ * @param[out] d å¹³é¢ã®æ–¹ç¨‹å¼ ax + by + cz + d = 0 ã®ä¿‚æ•°ã® d
  */
 void CalculatePlane3D_Using3Depths(double P1[3], double P2[3], double P3[3], double *a, double *b, double *c, double *d) {
 	double AB[3], AC[3];
 	double norm;
 
-	/* ƒxƒNƒgƒ‹‚É•ÏŠ· */
+	/* ãƒ™ã‚¯ãƒˆãƒ«ã«å¤‰æ› */
 	ToVector(P1, P2, 3, AB);
 	ToVector(P1, P3, 3, AC);
 
-	/* –@üƒxƒNƒgƒ‹ */
+	/* æ³•ç·šãƒ™ã‚¯ãƒˆãƒ« */
 	*a = AB[1] * AC[2] - AB[2] * AC[1];
 	*b = AB[2] * AC[0] - AB[0] * AC[2];
 	*c = AB[0] * AC[1] - AB[1] * AC[0];
@@ -661,51 +660,51 @@ void CalculatePlane3D_Using3Depths(double P1[3], double P2[3], double P3[3], dou
 	*b = *b / (norm + DBL_MIN);
 	*c = *c / (norm + DBL_MIN);
 
-	/* Œ´“_‚©‚ç•½–Ê‚ÉL‚Î‚µ‚½‚ü‚Ì’·‚³ */
+	/* åŸç‚¹ã‹ã‚‰å¹³é¢ã«ä¼¸ã°ã—ãŸå‚ç·šã®é•·ã• */
 	*d = -1.0 * *a * P1[0] + -1.0 * *b * P1[1] + -1.0 * *c * P1[2];
 }
 
 /**
- * ’¼ü‚Ì•û’ö®‚ğ•W€Œ`‚©‚çˆê”ÊŒ`‚É•ÏŒ`‚·‚é (y = ax + b --> ax + by + c = 0)
- * @param[in] a •W€Œ`‚ÌŒW” (ŒX‚«)
- * @param[in] b •W€Œ`‚ÌŒW” (Ø•Ğ)
- * @param[out] ga ˆê”ÊŒ`‚ÌŒW”‚Ìa
- * @param[out] gb ˆê”ÊŒ`‚ÌŒW”‚Ìb
- * @param[out] gc ˆê”ÊŒ`‚ÌŒW”‚Ìc
+ * ç›´ç·šã®æ–¹ç¨‹å¼ã‚’æ¨™æº–å½¢ã‹ã‚‰ä¸€èˆ¬å½¢ã«å¤‰å½¢ã™ã‚‹ (y = ax + b --> ax + by + c = 0)
+ * @param[in] a æ¨™æº–å½¢ã®ä¿‚æ•° (å‚¾ã)
+ * @param[in] b æ¨™æº–å½¢ã®ä¿‚æ•° (åˆ‡ç‰‡)
+ * @param[out] ga ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®a
+ * @param[out] gb ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®b
+ * @param[out] gc ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®c
  * @return EXIT_SUCCESS
  */
 int ToLineCanonicalForm(double a, double b, double *ga, double *gb, double *gc)
 {
 	double norm;
 
-	/* –@üƒxƒNƒgƒ‹ */
+	/* æ³•ç·šãƒ™ã‚¯ãƒˆãƒ« */
 	norm = sqrt(a * a + 1.0);
 	*ga = a / (norm + DBL_MIN);
 	*gb = -1.0 / (norm + DBL_MIN);
 
-	/* Œ´“_‚©‚ç•½–Ê‚ÉL‚Î‚µ‚½‚ü‚Ì’·‚³ */
+	/* åŸç‚¹ã‹ã‚‰å¹³é¢ã«ä¼¸ã°ã—ãŸå‚ç·šã®é•·ã• */
 	*gc = b;
 	return EXIT_SUCCESS;
 }
 
 
 /**
- * •½–Ê‚Ì•û’ö®‚ğ•W€Œ`‚©‚çˆê”ÊŒ`‚É•ÏŒ`‚·‚é (z = ax + by + c --> ax + by + cz + d = 0)
- * @param[in] a •W€Œ`‚ÌŒW”a
- * @param[in] b •W€Œ`‚ÌŒW”b
- * @param[in] c •W€Œ`‚ÌŒW”c
- * @param[out] ga ˆê”ÊŒ`‚ÌŒW”‚Ìa
- * @param[out] gb ˆê”ÊŒ`‚ÌŒW”‚Ìb
- * @param[out] gc ˆê”ÊŒ`‚ÌŒW”‚Ìc
- * @param[out] gd ˆê”ÊŒ`‚ÌŒW”‚Ìd
+ * å¹³é¢ã®æ–¹ç¨‹å¼ã‚’æ¨™æº–å½¢ã‹ã‚‰ä¸€èˆ¬å½¢ã«å¤‰å½¢ã™ã‚‹ (z = ax + by + c --> ax + by + cz + d = 0)
+ * @param[in] a æ¨™æº–å½¢ã®ä¿‚æ•°a
+ * @param[in] b æ¨™æº–å½¢ã®ä¿‚æ•°b
+ * @param[in] c æ¨™æº–å½¢ã®ä¿‚æ•°c
+ * @param[out] ga ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®a
+ * @param[out] gb ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®b
+ * @param[out] gc ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®c
+ * @param[out] gd ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®d
  * @return EXIT_SUCCESS
  */
 int ToPlaneCanonicalForm(double a, double b, double c, double *ga, double *gb, double *gc, double *gd) {
 
-	/* –@üƒxƒNƒgƒ‹ */
-	//*ga = a;  /* ŒW”a */
-	//*gb = b;  /* ŒW”b */
-	//*gc = -1; /* ŒW”c */
+	/* æ³•ç·šãƒ™ã‚¯ãƒˆãƒ« */
+	//*ga = a;  /* ä¿‚æ•°a */
+	//*gb = b;  /* ä¿‚æ•°b */
+	//*gc = -1; /* ä¿‚æ•°c */
 
 	double norm;
 
@@ -714,32 +713,32 @@ int ToPlaneCanonicalForm(double a, double b, double c, double *ga, double *gb, d
 	*gb = b / (norm + DBL_MIN);
 	*gc = -1.0 / (norm + DBL_MIN);
 
-	/* Œ´“_‚©‚ç•½–Ê‚ÉL‚Î‚µ‚½‚ü‚Ì’·‚³ */
-	*gd = c;  /* ŒW”d */
+	/* åŸç‚¹ã‹ã‚‰å¹³é¢ã«ä¼¸ã°ã—ãŸå‚ç·šã®é•·ã• */
+	*gd = c;  /* ä¿‚æ•°d */
 
 	return EXIT_SUCCESS;
 }
 
 /**
- * •½–Ê‚Ì•û’ö®‚ğˆê”ÊŒ`‚©‚ç•W€Œ`‚É•ÏŒ`‚·‚é (z = ax + by + c --> ax + by + cz + d = 0)
- * @param[in] a ˆê”ÊŒ`‚ÌŒW”‚Ìa
- * @param[in] b ˆê”ÊŒ`‚ÌŒW”‚Ìb
- * @param[in] c ˆê”ÊŒ`‚ÌŒW”‚Ìc
- * @param[in] d ˆê”ÊŒ`‚ÌŒW”‚Ìd
- * @param[out] ca •W€Œ`‚ÌŒW”a
- * @param[out] cb •W€Œ`‚ÌŒW”b
- * @param[out] cc •W€Œ`‚ÌŒW”c
- * @retval EXIT_SUCCESS •ÏŠ·¬Œ÷
- * @retval EXIT_FAILURE •ÏŠ·¸”s(0œZ)
+ * å¹³é¢ã®æ–¹ç¨‹å¼ã‚’ä¸€èˆ¬å½¢ã‹ã‚‰æ¨™æº–å½¢ã«å¤‰å½¢ã™ã‚‹ (z = ax + by + c --> ax + by + cz + d = 0)
+ * @param[in] a ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®a
+ * @param[in] b ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®b
+ * @param[in] c ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®c
+ * @param[in] d ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®d
+ * @param[out] ca æ¨™æº–å½¢ã®ä¿‚æ•°a
+ * @param[out] cb æ¨™æº–å½¢ã®ä¿‚æ•°b
+ * @param[out] cc æ¨™æº–å½¢ã®ä¿‚æ•°c
+ * @retval EXIT_SUCCESS å¤‰æ›æˆåŠŸ
+ * @retval EXIT_FAILURE å¤‰æ›å¤±æ•—(0é™¤ç®—)
  */
 int ToPlaneGenericForm(double a, double b, double c, double d, double *ca, double *cb, double *cc) {
 	if (c != 0) {
-		/* ŒX‚« */
-		*ca = - a / c; /* ŒW”a */
-		*cb = - b / c; /* ŒW”b */
+		/* å‚¾ã */
+		*ca = - a / c; /* ä¿‚æ•°a */
+		*cb = - b / c; /* ä¿‚æ•°b */
 
-		/* Ø•Ğ */
-		*cc = - d / c; /* ŒW”c */
+		/* åˆ‡ç‰‡ */
+		*cc = - d / c; /* ä¿‚æ•°c */
 		return EXIT_SUCCESS;
 
 	} else {
@@ -751,12 +750,12 @@ int ToPlaneGenericForm(double a, double b, double c, double d, double *ca, doubl
 }
 
 /**
- * “_‚Æ’¼ü‚Æ‚Ì‹——£‚ğ•Ô‚·
- * @param[in] a ˆê”ÊŒ`‚ÌŒW”‚Ìa
- * @param[in] b ˆê”ÊŒ`‚ÌŒW”‚Ìb
- * @param[in] c ˆê”ÊŒ`‚ÌŒW”‚Ìc
- * @param[in] point “_
- * @return “_‚Æ’¼ü‚Æ‚Ì‹——£
+ * ç‚¹ã¨ç›´ç·šã¨ã®è·é›¢ã‚’è¿”ã™
+ * @param[in] a ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®a
+ * @param[in] b ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®b
+ * @param[in] c ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®c
+ * @param[in] point ç‚¹
+ * @return ç‚¹ã¨ç›´ç·šã¨ã®è·é›¢
  */
 double DistanceLineToDepth(double a, double b, double c, double point[2]) {
 	double x = point[0];
@@ -766,13 +765,13 @@ double DistanceLineToDepth(double a, double b, double c, double point[2]) {
 }
 
 /**
- * “_‚Æ•½–Ê‚Æ‚Ì‹——£‚ğ•Ô‚·
- * @param[in] a ˆê”ÊŒ`‚ÌŒW”‚Ìa
- * @param[in] b ˆê”ÊŒ`‚ÌŒW”‚Ìb
- * @param[in] c ˆê”ÊŒ`‚ÌŒW”‚Ìc
- * @param[in] d ˆê”ÊŒ`‚ÌŒW”‚Ìd
- * @param[in] point “_
- * @return “_‚Æ•½–Ê‚Æ‚Ì‹——£
+ * ç‚¹ã¨å¹³é¢ã¨ã®è·é›¢ã‚’è¿”ã™
+ * @param[in] a ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®a
+ * @param[in] b ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®b
+ * @param[in] c ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®c
+ * @param[in] d ä¸€èˆ¬å½¢ã®ä¿‚æ•°ã®d
+ * @param[in] point ç‚¹
+ * @return ç‚¹ã¨å¹³é¢ã¨ã®è·é›¢
  */
 double DistancePlaneToDepth(double a, double b, double c, double d, double point[3]) {
 	double x = point[0];
@@ -783,21 +782,21 @@ double DistancePlaneToDepth(double a, double b, double c, double d, double point
 }
 
 /**
- * 2‚Â‚ÌƒxƒNƒgƒ‹‚©‚ç‚È‚é•½–Ê‚ª‚æ‚¢•½–Ê‚©‚ğ”»’è‚·‚é
- * @param[in] vec1 ƒxƒNƒgƒ‹1
- * @param[in] vec2 ƒxƒNƒgƒ‹2
- * @param[in] n ƒxƒNƒgƒ‹‚ÌŸŒ³”
- * @retval 1 ‚æ‚¢•½–Ê (–@üƒxƒNƒgƒ‹ŒŸo‰Â”\)
- * @retval 0 ˆ«‚¢•½–Ê (–@üƒxƒNƒgƒ‹ŒŸo•s‰Â”\‚È‹°‚ê‚ª‚ ‚é)
+ * 2ã¤ã®ãƒ™ã‚¯ãƒˆãƒ«ã‹ã‚‰ãªã‚‹å¹³é¢ãŒã‚ˆã„å¹³é¢ã‹ã‚’åˆ¤å®šã™ã‚‹
+ * @param[in] vec1 ãƒ™ã‚¯ãƒˆãƒ«1
+ * @param[in] vec2 ãƒ™ã‚¯ãƒˆãƒ«2
+ * @param[in] n ãƒ™ã‚¯ãƒˆãƒ«ã®æ¬¡å…ƒæ•°
+ * @retval 1 ã‚ˆã„å¹³é¢ (æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«æ¤œå‡ºå¯èƒ½)
+ * @retval 0 æ‚ªã„å¹³é¢ (æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«æ¤œå‡ºä¸å¯èƒ½ãªæã‚ŒãŒã‚ã‚‹)
  */
 int IsCorrectPlane(const double *vec1, const double *vec2, size_t n) {
 	double angle;
 	double t = pi() / 6.0;
 
-	/* ‚È‚·Šp‚ğ‹‚ß‚é */
+	/* ãªã™è§’ã‚’æ±‚ã‚ã‚‹ */
 	angle = IncludedAngle(vec1, vec2, n);
 
-	/* ‚È‚·Šp‚ª‘å‚«‚·‚¬‚Ä‚à¬‚³‚·‚¬‚Ä‚à‚æ‚¢•½–Ê‚Æ‚Í‚¢‚¦‚È‚¢ */
+	/* ãªã™è§’ãŒå¤§ãã™ãã¦ã‚‚å°ã•ã™ãã¦ã‚‚ã‚ˆã„å¹³é¢ã¨ã¯ã„ãˆãªã„ */
 	if ( angle > t && angle < pi() - t ) {
 		return 1;
 	} else {
@@ -806,35 +805,35 @@ int IsCorrectPlane(const double *vec1, const double *vec2, size_t n) {
 }
 
 /**
- * ‘æ1ÛŒÀ‚©‚ç‘æ4ÛŒÀ‚Ü‚Å‚Ì•ÎŠp‚ğ‹‚ß‚é
- * @param[in] y y²•ûŒü‚ÌÀ•W
- * @param[in] x x²•ûŒü‚ÌÀ•W
- * @return xy•½–Ê‚Ì•ÎŠp(0 <= Arg <= 2pi)
+ * ç¬¬1è±¡é™ã‹ã‚‰ç¬¬4è±¡é™ã¾ã§ã®åè§’ã‚’æ±‚ã‚ã‚‹
+ * @param[in] y yè»¸æ–¹å‘ã®åº§æ¨™
+ * @param[in] x xè»¸æ–¹å‘ã®åº§æ¨™
+ * @return xyå¹³é¢ã®åè§’(0 <= Arg <= 2pi)
  */
 double Arg(double y, double x) {
 	double pi = atan(1.0) * 4.0;
 
-	if (x >= 0 && y >= 0) { // ‘æˆêÛŒÀ
+	if (x >= 0 && y >= 0) { // ç¬¬ä¸€è±¡é™
 		return atan2(y, x);
 
-	} else if (x <= 0 && y >= 0) { // ‘æ“ñÛŒÀ
+	} else if (x <= 0 && y >= 0) { // ç¬¬äºŒè±¡é™
 		return atan2(y, x);
 
-	} else if (x <= 0 && y <= 0 ) { // ‘æOÛŒÀ
+	} else if (x <= 0 && y <= 0 ) { // ç¬¬ä¸‰è±¡é™
 		return 2.0 * pi + atan2(y, x);
 
-	} else { // ‘ælÛŒÀ
+	} else { // ç¬¬å››è±¡é™
 		return 2.0 * pi + atan2(y, x);
 
 	}
 }
 
 /**
- * “V’¸Šp‚ğ‹‚ß‚é
- * @param[in] x x²•ûŒü‚ÌÀ•W
- * @param[in] y y²•ûŒü‚ÌÀ•W
- * @param[in] z z²•ûŒü‚ÌÀ•W
- * @return xyz‹óŠÔ‚Ì“V’¸Šp(0 <= Arg <= pi)
+ * å¤©é ‚è§’ã‚’æ±‚ã‚ã‚‹
+ * @param[in] x xè»¸æ–¹å‘ã®åº§æ¨™
+ * @param[in] y yè»¸æ–¹å‘ã®åº§æ¨™
+ * @param[in] z zè»¸æ–¹å‘ã®åº§æ¨™
+ * @return xyzç©ºé–“ã®å¤©é ‚è§’(0 <= Arg <= pi)
  */
 double ZenithAngle(double x, double y, double z) {
 	double pi = atan(1.0) * 4.0;
@@ -845,55 +844,55 @@ double ZenithAngle(double x, double y, double z) {
 }
 
 /**
- * ƒVƒOƒ‚ƒCƒhŠÖ”‚ğŒvZ‚·‚é
- * @param[in] x ˆø”
- * @param[in] gain ƒQƒCƒ“
- * @return ƒVƒOƒ‚ƒCƒhŠÖ”
+ * ã‚·ã‚°ãƒ¢ã‚¤ãƒ‰é–¢æ•°ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] x å¼•æ•°
+ * @param[in] gain ã‚²ã‚¤ãƒ³
+ * @return ã‚·ã‚°ãƒ¢ã‚¤ãƒ‰é–¢æ•°
  */
 double Sigmoid(double x, double gain) {
   return 1.0 / (1.0 + exp(-gain * x));
 }
 
 /**
- * ‰~ü—¦‚ğ‹‚ß‚é
- * @return ‰~ü—¦
+ * å††å‘¨ç‡ã‚’æ±‚ã‚ã‚‹
+ * @return å††å‘¨ç‡
  */
 double pi(void) {
     return atan(1.0) * 4.0;
 }
 
 /**
- * ŒÊ“x–@•\‹L‚ğ“x”–@•\‹L‚É•ÏŠ·‚·‚é
- * @param[in] r Šp“x[rad]
- * @return Šp“x[deg]
+ * å¼§åº¦æ³•è¡¨è¨˜ã‚’åº¦æ•°æ³•è¡¨è¨˜ã«å¤‰æ›ã™ã‚‹
+ * @param[in] r è§’åº¦[rad]
+ * @return è§’åº¦[deg]
  */
 double to_deg(double r) {
     return r * 180.0 / (atan(1.0) * 4.0);
 }
 
 /**
- * “x”–@•\‹L‚ğŒÊ“x–@•\‹L‚É•ÏŠ·‚·‚é
- * @param[in] r Šp“x[deg]
- * @return Šp“x[rad]
+ * åº¦æ•°æ³•è¡¨è¨˜ã‚’å¼§åº¦æ³•è¡¨è¨˜ã«å¤‰æ›ã™ã‚‹
+ * @param[in] r è§’åº¦[deg]
+ * @return è§’åº¦[rad]
  */
 double to_rad(double a) {
     return a * atan(1.0) * 4.0 / 180.0;
 }
 
 /**
- * ”CˆÓ‚Ì®”‚ğ’ê‚Æ‚·‚é‘Î”‚ğŒvZ‚·‚é
- * @param[in] base ’ê
- * @param[in] antilog ^”
+ * ä»»æ„ã®æ•´æ•°ã‚’åº•ã¨ã™ã‚‹å¯¾æ•°ã‚’è¨ˆç®—ã™ã‚‹
+ * @param[in] base åº•
+ * @param[in] antilog çœŸæ•°
  */
 double logn(double base, double antilog) {
     return log(antilog) / log(base);
 }
 
 /**
- * ƒjƒ…[ƒgƒ“–@‚Å—§•ûª‚ğ‹ß—‚·‚é
- * @param[in] a À”
- * @param[in] x ‰ğ‚É‹ß‚»‚¤‚È’l
- * @return a ‚Ì—§•ûª
+ * ãƒ‹ãƒ¥ãƒ¼ãƒˆãƒ³æ³•ã§ç«‹æ–¹æ ¹ã‚’è¿‘ä¼¼ã™ã‚‹
+ * @param[in] a å®Ÿæ•°
+ * @param[in] x è§£ã«è¿‘ãã†ãªå€¤
+ * @return a ã®ç«‹æ–¹æ ¹
  */
 double cbrt_newton(double a, double x) {
     double e;
@@ -909,3 +908,5 @@ double cbrt_newton(double a, double x) {
 double frac(double x, double y){
 	return x / (y + DBL_MIN);
 }
+
+/* vim: set foldmethod=marker: set fenc=utf-8: */

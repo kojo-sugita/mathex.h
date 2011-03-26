@@ -59,3 +59,5 @@ double to_rad(double a);
 double logn( int base, int antilog );
 double cbrt_newton(double a, double x);
 double frac(double x, double y);
+
+/* vim: set foldmethod=marker: set fenc=utf-8: */
